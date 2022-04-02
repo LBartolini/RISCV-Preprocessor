@@ -4,8 +4,6 @@ This is a Preprocessor for RISC-V Assembly that works on Ripes Simulator.
 
 ### What you can do with the Preprocessor
 
-
-
 - Work with multiple files
 
 - Let the Preprocessor handle the logic needed for 'ra' register when calling a procedure
@@ -46,7 +44,7 @@ This is a Preprocessor for RISC-V Assembly that works on Ripes Simulator.
 
 6. #! precall(<name_of_procedure>)
    
-   1. this is where the magic happens, earlier I explained that you need to explicitly tell wich registers are used by each procedure. it's role was to be able to use '#! precall'. 
+   1. this is where the magic happens, earlier I explained that you need to explicitly tell wich registers are used by each procedure. its role was to be able to use '#! precall'. 
    
    2. What it does is pushing the used registers to the stack. this way you don't have to do it manually, which can lead to problems hard to identify during debugging.
    

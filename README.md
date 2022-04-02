@@ -16,7 +16,9 @@ This is a Preprocessor for RISC-V Assembly that works on Ripes Simulator.
 
 2. Every file can have a '.data' and '.text' section. Be careful to use unique names all over the files because they will end up in the same one at the end so you have to make sure you will not fall in same naming conflicts.
 
-3. After this first line you can start including other files to main. You can only include files in the 'main' file, otherwise an error will be raised. The syntax to do so is the following: '#! include <file_name>.s' (.s is the extension of the file, if you are using a different one just change it in here)
+3. After this first line you can start including other files to main. You can only include files in the 'main' file, otherwise an error will be raised. The syntax to do so is the following: '#!include <file_name>.s' (.s is the extension of the file, if you are using a different one just change it in here)
+   
+   1. Be careful that there is NOT a space between '!' and 'include'
 
 4. main file MUST have a '.text' to notify the end of '.data' (even if there's no '.data') BUT you can't place any code in '.text' that is outside of a procedure. You have to put all of the code inside the ''. (The Preprocessor will take care of reaching it, don' worry)
 
@@ -40,7 +42,7 @@ This is a Preprocessor for RISC-V Assembly that works on Ripes Simulator.
    
    5. #! end
       
-      1. this MUST be the last line of the procedure. it maps to the instruction 'jr ra' so you don't have to put that. In case you put also '#! manage_ra' the Preprocessor is going to manage the 'ra' register, otherwise it's your job to make everything work.
+      1. this MUST be the last line of the procedure. it maps to the instruction 'jr ra' so you don't have to put that. In case you put also '#! manage_ra' the Preprocessor is going to manage the 'ra' register, otherwise it's your job to make everything work. This is needed by 'main' proc too!
 
 6. #! precall(<name_of_procedure>)
    
@@ -58,13 +60,9 @@ This is a Preprocessor for RISC-V Assembly that works on Ripes Simulator.
 
 An example is provided in the repository.
 
-
-
 ### Usage
 
 todo
-
-
 
 ### Installation
 

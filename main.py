@@ -32,7 +32,7 @@ def prepare_procedures(lines, entry_point):
 def preprocess(source_path, directory=None, imported=False, prepare=True, entry_point=""):
     directory = os.path.dirname(
         source_path) if directory is None else directory
-    path = source_path if not imported else directory+'/'+source_path
+    path = source_path if not imported or directory == "" else directory+'/'+source_path
 
     with open(path, 'r') as f:
         lines = f.readlines()

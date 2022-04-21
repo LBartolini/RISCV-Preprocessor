@@ -60,10 +60,62 @@ This is a Preprocessor for RISC-V Assembly that works on Ripes Simulator.
 
 An example is provided in the repository.
 
-### Usage
-
-todo
-
 ### Installation
 
-todo
+```bash
+git clone https://github.com/LBartolini/RISCV-Preprocessor.git
+cd RISCV-Preprocessor
+pip3 install -r requirements.txt
+```
+
+The installatio process is very easy. Just clone the repository and install the required packages via PIP. (You have to use Python3 as shown by the pip3 command)
+
+### Usage
+
+```bash
+python ../RISCV-Preprocessor/main.py -s main.s -o output.s
+```
+
+This is an example of how to use the program. 
+
+In this example the folders are constructed like this.
+
+- MyBeautifulFolder
+  
+  - RISCV-Preprocessor
+    
+    - ...
+    
+    - main.py
+    
+    - ...
+  
+  - MyNewAssemblyProject (executing that command from inside this folder)
+    
+    - ...
+    
+    - main.s
+    
+    - ...
+
+##### Parameters
+
+- **-s**, expects the entry file of you assembly project. I have already covered the specifics of the *main.s* file
+
+- **-o** (optional if you set *-cc*), expects the output file.
+
+- **-cc** (optional if you set *-o*), this is a boolean which means you just have to put it in the command without any other string after it (*python main.py -s main.s -cc*). This is going to copy to the clipboard the whole program so that you can easily paste inside Ripes when debugging your code.
+
+These are the standard parameters. At the moment I'm writing this docs the latest non-stable release of Ripes is [Ripes-v2.2.4-47-g48047b7](https://github.com/mortbopet/Ripes/releases/download/continuous/Ripes-v2.2.4-47-g48047b7-mac-x86_64.zip) that includes support for CLI. If you have this version, or newer, you can use some other parameters to the Preprocessor that will allow you to run directly your code in the terminal without having to copy-paste to the Ripes GUI.
+
+- **-exe**, boolean (as like *-cc*) that tells the preprocessor that you are willing to execute the program directly from the Command Line.
+
+- **-rp**, expects the path to the Ripes executable. You can provide a relative path or an absolute path. What is suggest is to export an environment variable (like this *export RIPES_PATH=<path_to_executable>*) to store the absolute path and pass it as argument (just like this *python main.py -s main.s -exe -rp $RIPES_PATH*) 
+
+
+
+### Contacts
+
+For any specific request don't hesitate to contact me at:
+
+- [l.bartolini02@gmail.com](mailto:l.bartolini02@gmail.com)

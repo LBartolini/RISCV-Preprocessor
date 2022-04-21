@@ -18,7 +18,17 @@ lw ra, 0(sp)
 addi sp, sp, 4
 jr ra
 main:
+addi sp, sp, -16
+sw a0, 12(sp)
+sw t0, 8(sp)
+sw t1, 4(sp)
+sw t2, 0(sp)
 la a0, example
 jal str_len
+lw t2, 0(sp)
+lw t1, 4(sp)
+lw t0, 8(sp)
+lw a0, 12(sp)
+addi sp, sp, 16
 li a7, 1
 ecall

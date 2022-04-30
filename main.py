@@ -103,7 +103,7 @@ if __name__ == "__main__":
     parser.add_argument(
         '-exe', help="Direct execution", action="store_true")
     parser.add_argument('-rp', help="Path to Ripes Executable", type=str)
-    parser.add_argument('-isaexts', help="ISA extentions (comma separated w/o spaces)", type=str, default="M")
+    parser.add_argument('-isaexts', help="ISA extentions (comma separated w/o spaces)", type=str, default="M,C")
     parser.add_argument('-proc', help="Processor type", type=str, default="RV32_SS")
 
     args = parser.parse_args()
@@ -122,4 +122,4 @@ if __name__ == "__main__":
         raise Exception('Please select a way of representing the output!')
     
     if args.exe and args.rp:
-        os.system(f"{args.rp} --mode cli --src {args.o} -t asm --proc {args.proc} --isaexts {args.isaexts}")
+        os.system(f"{args.rp} --mode cli --src {args.o} -t asm --proc {args.proc} --isaexts {args.isaexts} --cycles")

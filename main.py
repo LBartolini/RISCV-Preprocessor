@@ -109,7 +109,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     preprocess(args.s)
-    out = re.sub(r'\n\s*\n', '\n', program.get_code())
+    out = re.sub(r'\n\s*\n', '\n\n', program.get_code())
 
     if args.o is not None:
         with open(args.o, 'w') as f:
